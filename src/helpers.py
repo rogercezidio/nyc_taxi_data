@@ -21,10 +21,8 @@ def _load_env() -> None:
     for env_path in candidates:
         if env_path and env_path.is_file():
             load_dotenv(env_path, override=True)
-            print(f"🔑 .env carregado de {env_path}")
+            print(f".env carregado de {env_path}")
             break
-    else:
-        print("⚠️  Nenhum .env encontrado – variáveis devem vir do cluster / secrets")
 
 _load_env()
 
