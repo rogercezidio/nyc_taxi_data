@@ -90,11 +90,11 @@ TAXI_TYPES: Tuple[str, ...] = ("yellow", "green", "fhv", "fhvhv")
 
 @dataclass(frozen=True)
 class RAW:
-    YEAR: int = 2023
-    MONTHS: Tuple[str, ...] = tuple(f"{m:02d}" for m in range(1, 6))
-    BASE_URL: str = "https://d37ci6vzurychx.cloudfront.net/trip-data"
-    DEST_ROOT: str = _root("raw")
-    CHUNK: int = 8 * 1024 * 1024  # 8 MiB
+    YEARS     : Tuple[int, ...] = tuple(range(2023, 2026))
+    MONTHS    : Tuple[str, ...] = tuple(f"{m:02d}" for m in range(1, 13))
+    BASE_URL  : str            = "https://d37ci6vzurychx.cloudfront.net/trip-data"
+    DEST_ROOT : str            = _root("raw")
+    CHUNK     : int            = 8 * 1024 * 1024
 
 
 @dataclass(frozen=True)
