@@ -73,17 +73,27 @@ Tipos de táxi processados:
 
 ---
 
-## ⚙️ Execução
+## ⚙️ Execução 
 
-1. Configure um cluster no Databricks com Unity Catalog habilitado.
-2. Crie um arquivo `.env` na raiz com as variáveis:
-```env
-BUCKET_BASE=s3://seu-bucket/path
-TAG=nyc
-CATALOG=ifood_case
-CREDS_NAME=minha_credencial_uc
-```
-3. Execute os notebooks na ordem:
+1. Configure um cluster no Databricks com **Unity Catalog habilitado**.
+2. No AWS IAM, crie uma **role com permissão para acessar seu bucket S3** e confiança na conta Databricks. Depois, crie a Storage Credential com:
+
+   ```sql
+   CREATE STORAGE CREDENTIAL minha_credencial_uc
+   WITH IAM_ROLE = 'arn:aws:iam::<seu_account_id>:role/<sua_role>'
+   COMMENT 'Credencial UC para acesso ao bucket';
+
+3. Crie um arquivo `.env` na raiz com as variáveis:
+
+   ```env
+   BUCKET_BASE=s3://seu-bucket/path
+   TAG=nyc
+   CATALOG=ifood_case
+   CREDS_NAME=minha_credencial_uc
+   ```
+
+4. Execute os notebooks na ordem:
+
    1. `01_ingertion_raw`
    2. `02_etl_bronze`
    3. `03_etl_silver`
