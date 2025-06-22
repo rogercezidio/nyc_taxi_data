@@ -82,6 +82,10 @@ Tipos de táxi processados:
    CREATE STORAGE CREDENTIAL minha_credencial_uc
    WITH IAM_ROLE = 'arn:aws:iam::<seu_account_id>:role/<sua_role>'
    COMMENT 'Credencial UC para acesso ao bucket';
+   ```
+   Se preferir use Cloudformation:
+
+   🔗 Referência: https://docs.databricks.com/aws/pt/connect/unity-catalog/cloud-storage/external-locations
 
 3. Crie um arquivo `.env` na raiz com as variáveis:
 
