@@ -98,7 +98,7 @@ Tipos de táxi processados:
 
 4. Execute os notebooks na ordem:
 
-   1. `01_ingertion_raw`
+   1. `01_ingestion_raw`
    2. `02_etl_bronze`
    3. `03_etl_silver`
    4. `04_etl_gold`
