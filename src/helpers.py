@@ -87,7 +87,7 @@ TAXI_TYPES: Tuple[str, ...] = ("yellow", "green", "fhv", "fhvhv")
 
 @dataclass(frozen=True)
 class RAW:
-    YEARS     : Tuple[int, ...] = tuple(range(2023, 2026))
+    YEARS     : Tuple[int, ...] = tuple(range(2023, 2024))
     MONTHS    : Tuple[str, ...] = tuple(f"{m:02d}" for m in range(1, 13))
     BASE_URL  : str            = "https://d37ci6vzurychx.cloudfront.net/trip-data"
     DEST_ROOT : str            = _root("raw")
